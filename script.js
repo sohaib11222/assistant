@@ -94,10 +94,10 @@ function takeCommand(message) {
  //     takeCommand(message);
  // };
 
- recognition.onerror = function(event) {
-     console.error("Speech recognition error:", event.error);
-     speak("Sorry, I didn't catch that. Could you repeat?");
- };
+ // recognition.onerror = function(event) {
+ //     console.error("Speech recognition error:", event.error);
+ //     speak("Sorry, I didn't catch that. Could you repeat?");
+ // };
 
 
   // Function to start listening
