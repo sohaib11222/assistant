@@ -30,22 +30,22 @@ window.addEventListener('load',()=>{
     wishMe()
 })
 
-// let speechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition 
-// let recognition =new speechRecognition()
-// recognition.onresult=(event)=>{
-//     let currentIndex=event.resultIndex
-//     let transcript=event.results[currentIndex][0].transcript
-//      content.innerText=transcript
-//     takeCommand(transcript.toLowerCase())
-//  }
+let speechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition 
+let recognition =new speechRecognition()
+recognition.onresult=(event)=>{
+    let currentIndex=event.resultIndex
+    let transcript=event.results[currentIndex][0].transcript
+     content.innerText=transcript
+    takeCommand(transcript.toLowerCase())
+ }
 
 
 
-// btn.addEventListener("click",()=>{
-//     recognition.start()
-//     voice.style.display="block"
-//     btn.style.display="none"
-// })
+btn.addEventListener("click",()=>{
+    recognition.start()
+    voice.style.display="block"
+    btn.style.display="none"
+})
 
 function takeCommand(message) {
     speechSynthesis.cancel();
@@ -82,17 +82,17 @@ function takeCommand(message) {
 }
 
  // Set up speech recognition
- const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
- const recognition = new SpeechRecognition();
- recognition.lang = "en-US";
- recognition.interimResults = false;
+ // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+ // const recognition = new SpeechRecognition();
+ // recognition.lang = "en-US";
+ // recognition.interimResults = false;
 
  // Handle recognition results
- recognition.onresult = function(event) {
-     const message = event.results[0][0].transcript.toLowerCase();
-     console.log("Voice input:", message);
-     takeCommand(message);
- };
+ // recognition.onresult = function(event) {
+ //     const message = event.results[0][0].transcript.toLowerCase();
+ //     console.log("Voice input:", message);
+ //     takeCommand(message);
+ // };
 
  recognition.onerror = function(event) {
      console.error("Speech recognition error:", event.error);
@@ -101,21 +101,21 @@ function takeCommand(message) {
 
 
   // Function to start listening
-  function startListening() {
-    voice.style.display = "block";
-    speak("I am listening");
-    console.log("Starting recognition..."); // Debug statement
-    recognition.start();
-}
+//   function startListening() {
+//     voice.style.display = "block";
+//     speak("I am listening");
+//     console.log("Starting recognition..."); // Debug statement
+//     recognition.start();
+// }
 
 
 // Re-run recognition on end to continue listening
-recognition.onend = function() {
-    voice.style.display = "none";
-    // Remove auto-restart to avoid looping errors
-    console.log("Stopped listening. Click the button to start again.");
-};
+// recognition.onend = function() {
+//     voice.style.display = "none";
+//     // Remove auto-restart to avoid looping errors
+//     console.log("Stopped listening. Click the button to start again.");
+// };
 // Handle recognition results
-recognition.onstart = function() {
-    console.log("Speech recognition started.");
-};
+// recognition.onstart = function() {
+//     console.log("Speech recognition started.");
+// };
